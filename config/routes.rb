@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'hello#index'
+
   # devise_for :users
   post 'auth_user' => 'authentication#authenticate_user'
   get 'welcome' => 'welcome#index'
