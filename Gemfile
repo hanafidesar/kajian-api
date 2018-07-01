@@ -31,8 +31,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# Use for authentification user by https://www.sitepoint.com/introduction-to-using-jwt-in-rails/
+# Autentification user
 gem 'devise'
+# Json Web Token for create token session
 gem 'jwt'
+#Installing and configuring this gem should allow your Rails application to properly process the options request caused by CORS:
+gem 'rack-cors', require: 'rack/cors'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

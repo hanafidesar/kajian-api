@@ -88,6 +88,7 @@ GEM
     orm_adapter (0.5.0)
     pg (0.21.0)
     rack (1.6.10)
+    rack-cors (1.0.2)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.3)
@@ -179,6 +180,7 @@ DEPENDENCIES
   jquery-rails
   jwt
   pg (~> 0.20)
+  rack-cors
   rails (= 4.2.3)
   rails_12factor
   sass-rails (~> 5.0)
