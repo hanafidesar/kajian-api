@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'v1/index'
-
-  root 'welcome#index'
+  # devise_for :users
+  post 'auth_user' => 'authentication#authenticate_user'
+  get 'welcome' => 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
