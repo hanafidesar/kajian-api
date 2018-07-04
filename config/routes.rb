@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :admins
   root 'hello#index'
 
   # devise_for :users
   post 'auth_user' => 'authentication#authenticate_user'
+  post 'auth_admin' => 'authentication_admin#authenticate_admin'
   get 'welcome' => 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
