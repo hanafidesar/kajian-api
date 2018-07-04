@@ -1,9 +1,9 @@
 class AuthenticationAdminController < ApplicationController
     protect_from_forgery with: :null_session
     def authenticate_admin
-      user = Admin.find_for_database_authentication(email: params[:email])
-      if user.valid_password?(params[:password])
-        render json: payload(user)
+      admin = Admin.find_for_database_authentication(email: params[:email])
+      if admin.valid_password?(params[:password])
+        render json: payload(admin)
       else
         render json: {errors: ['Invalid Username/Password']}, status: :unauthorized
       end
@@ -11,11 +11,11 @@ class AuthenticationAdminController < ApplicationController
   
     private
   
-    def payload(user)
-      return nil unless user and user.id
+    def payload(admin)
+      return nil unless admin and admin.id
       {
-        auth_token: JsonWebToken.encode({admin_id: user.id}),
-        user: {id: user.id, email: user.email}
+        auth_token: JsonWebToken.encode({admin_id: admin.id}),
+        admin: {id: admin.id, email: admin.email}
       }
     end
   end
